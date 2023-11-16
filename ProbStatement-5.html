@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  .tcontainer{
+    border: 1px solid black;
+    width: 700px;
+    height: 1000px;
+  }
+</style>
+</head>
+<body>
+  <div class="tcontainer">
+    <table border="2" size="15px" bgcolor="pink" cellspacing="0px">
+      <tbody >
+        <tr>
+        <td><label for="nm">Name</label></td>
+        <td><input type="text" name="name" id="nm" required autofocus/><span style="color: red;">*</span></td>
+        </tr>
+        <tr>
+          <td><label for="em">Employee Code</label></td>
+          <td><input type="text" name="emp" id="em" size="2px"/><span style="color: red;">*</span></td>
+          </tr>
+          <tr>
+            <td><label for="dpt">Department </label></td>
+            <td><input type="radio" name="dept" id="dpt" checked/>Admin <br>
+            <input type="radio" name="dept" id="dpt"/>HR<br>
+            <input type="radio" name="dept" id="dpt"/>Technical<br>
+            <input type="radio" name="dept" id="dpt"/>Accounts</td>
+            </tr>
+            <tr>
+              <td><label for="date">Date of Joining</label></td>
+              <td><input type="date" name="date" id="date"/><br>
+            </tr>
+            <tr>
+              <td><label for="adr">Address</label></td>
+              <td><textarea cols="35" rows="5" placeholder="Enter your text here"></textarea><br>
+            </tr>
+            <tr>
+              <td><label for="tpa">Training programs Attended</label></td>
+              <td><input type="checkbox" name="tpa" id="tpa" checked/>HTML/DHTML <br>
+              <input type="checkbox" name="tpa" id="tpa"/>JAVA<br>
+              <input type="checkbox" name="tpa" id="tpa"/>CLIENT/SERVER<br>
+              <input type="checkbox" name="tpa" id="tpa"/>.NET</td>
+              </tr>
+              <tr>
+                <td>Training Programmes need to attend</td>
+                <td><select name="tpna" id="tpna" size="2">
+                  <option value="JAVASCRIPT">JavaScript</option>
+                  <option value="JSTRUTS">JStruts</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td>Send the information at</td>
+                <td>empinfo@patni.com</td>
+                 
+              </tr>
+
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
