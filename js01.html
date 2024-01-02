@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+     function validatedata(num,err)
+{
+     var n=parseInt(document.getElementById(num).value)
+     if(n===""||isNaN(n))
+     {
+      document.getElementById(err).innerHTML="* Invalid data";
+      return false;
+     }else
+     {
+      document.getElementById(err).innerHTML="";
+      return true;
+     }
+
+}
+
+
+
+
+function largestnum(){
+        var flag1=validatedata("num1","er1")
+        var flag2=validatedata("num2","er2")
+        var flag3=validatedata("num3","er3")
+
+        if(flag1 && flag2 && flag3)
+        {
+          var x=parseInt(document.getElementById("num1").value);
+          var y=parseInt(document.getElementById("num2").value);
+          var z=parseInt(document.getElementById("num3").value);
+          if(x>y)
+          {
+            if(x>z)
+            {
+              document.getElementById("res").value=x;
+            }else{
+              document.getElementById("res").value=z;
+            }
+          }else
+          {
+            if(y>z)
+            {
+              document.getElementById("res").value=y;
+            }
+            else
+            {
+              document.getElementById("res").value=z;
+            }
+          }
+          
+        }
+
+}
+  </script>
+</head>
+<body>
+  <h1>Enter the three numbers</h1>
+  <form>
+    <label for="num1">Number 1:</label>
+    <input type="text" class="num1" id="num1"><span id="er1"></span><br><br><br>
+    <label for="num2">Number 2:</label>
+    <input type="text" class="num2" id="num2"><span id="er2"></span><br><br><br>
+    <label for="num3">Number 3:</label>
+    <input type="text" class="num3" id="num3"><span id="er3"></span><br><br><br>
+    <label for="res">Result:</label>
+    <input type="text" class="res" id="res" disabled><br><br>
+    <button type="button" class="btn" id="btn" onclick="largestnum()">Find Largest number</button>
+
+    </form>
+
+</body>
+</html>

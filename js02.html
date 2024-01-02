@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function validatestring(msg)
+    {
+      if(msg.trim()===""){
+                document.getElementById("err1").innerHTML="please enter valid string";
+                return false;
+            }
+            document.getElementById("err1").innerHTML="";
+            return true; 
+    }
+    function validatenumber(freq)
+    {
+      
+     if(freq===""||isNaN(freq))
+     {
+      document.getElementById("err2").innerHTML="* Invalid number";
+      return false;
+     }else
+     {
+      document.getElementById("err2").innerHTML="";
+      return true;
+     }
+    }
+   function freqrepeat(){
+    var flag1=validatestring(document.getElementById("msg").value)
+    var flag2=validatenumber(document.getElementById("freq").value)
+
+    if(flag1 && flag2)
+    {
+      var str=document.getElementById("msg").value;
+      var frq=parseInt(document.getElementById("freq").value);
+      for(var i=1;i<=frq;i++)
+      {
+      document.getElementById("res").value+=str;
+      }
+    }
+
+   }
+
+
+
+    </script>
+</head>
+<body>
+  Enter Message: <input type="text" class="msg" id="msg"/><span id="err1"></span><br><br>
+  Enter Frquency: <input type="text" class="freq" id="freq"/><span id="err2"></span>
+  <button type="button" type="btn" id="btn" onclick="freqrepeat()">Answer</button><br>
+  Result: <input type="text" class="res" id="res"/>
+</body>
+</html>
