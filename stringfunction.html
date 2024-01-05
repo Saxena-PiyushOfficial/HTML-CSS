@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function changeString()
+    {
+      var str=document.getElementById("str").value;
+      var op=document.getElementById("op")
+      var pos=op.selectedIndex
+      var choice=op.options[pos].value
+      switch(choice)
+      {
+               case "upper":
+                var result=str.toUpperCase();
+                break;
+                case "lower":
+                result=str.toLowerCase();
+                break;
+              
+                case "replace":
+                result=str.replace(/s.*?e/,'xxxxxxx')
+                break;
+                case "slice": var start=2;
+                    var end=9;
+                 
+                    result=str.slice(start,end);
+              
+                break;
+                case "split":    var delim=prompt("enetr delimiter");
+                    result=str.split(delim);     
+                break;
+                case "match":result=str.match(/s.*?d/)
+                break;
+                case "includes":      result=str.includes("ain");
+                    console.log(result);  
+                break;
+                case "search":result=str.search(/s.*?e/);
+                break;
+      }
+      document.getElementById("result").value=result;
+            document.getElementById("mydiv").innerHTML=result;
+    }
+  </script>
+</head>
+<body>
+<form>
+  <label for="str">Enter String:</label>
+  <input type="text" name="str" id="str"/><br>
+  <label for="result">Result:</label>
+  <input type="text" name="result" id="result"/><br>
+  Operations:<select name="op" id="op">
+    <option value="upper">Upper</option>
+    <option value="lower">lower</option>
+    <option value="replace">replace</option>
+    <option value="slice">slice</option>
+    <option value="split">split</option>
+    <option value="match">match</option>
+    <option value="includes">includes</option>
+    <option value="search">search</option>
+  </select>
+  <button type="button" name="btn" id="btn"onclick="changeString()">String</button>
+  </form>
+  <div id="mydiv">
+
+  </div>
+
+</body>
+</html>
