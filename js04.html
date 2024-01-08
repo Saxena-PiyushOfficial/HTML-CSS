@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <script>
+    function validatedata(num,errid){
+      var n=parseInt(document.getElementById(num).value)
+     if(isNaN(n))
+      {
+        document.getElementById(errid).innerHTML="* Enter a number"
+        return false
+      }else{
+        return true
+      }
+    }
+      function operations(){
+        var flag1=validatedata("nm1","err1")
+        var flag2=validatedata("nm2","err2")
+        if(flag1 && flag2){
+          var a=parseInt(document.getElementById("nm1").value)
+         var b=parseInt(document.getElementById("nm2").value)
+         var select=document.getElementById("sel").value;
+
+        switch(select)
+        {
+      case "add":
+        var ans;
+        ans=a+b;
+        break;
+        case "sub":
+        ans=a-b;
+        break;
+        case "mul":
+        ans=a*b;
+        break;
+        case "div":
+          ans=a/b;
+        break;
+        }
+        document.getElementById("res").value=ans;
+      }
+        }
+         
+
+
+
+
+  </script>
+</head>
+<body>
+  <fieldset>
+    <legend>Calculator</legend>
+    operations: <select name="sel" id="sel">
+      <option value="add">Addition</option>
+      <option value="sub">Subtraction</option>
+      <option value="mul">Multiply</option>
+      <option value="div">Divide</option>
+    </select><br>
+    &nbsp;  
+    <label for="nm1">Enter Number 1</label>
+    <input type="text" class="nm1" id="nm1"><span id="err1"></span><br>
+    <label for="nm2">Enter Number 2</label>
+    <input type="text" class="nm2" id="nm2"><span id="err2"></span><br>
+    <label for="res">Result</label>
+    <input type="text" class="res" id="res" disabled><br>
+    <button type="button" class="btn" id="btn" onclick="operations()">Answer</button>
+
+
+  </fieldset>
+</body>
+</html>

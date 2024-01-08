@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    function validatedata(num)
+    {
+      var n=parseInt(document.getElementById(num).value)
+     if(isNaN(n))
+      {
+        document.getElementById("err").innerHTML="* Enter a number"
+        return false
+      }else{
+        return true
+      }
+    }
+     function getsumdigit(){
+          var flag=validatedata("num")
+     
+     
+      if(flag){
+        var n = parseInt(document.getElementById("num").value);
+      var sum = 0;
+      while(n)
+      {
+        d=n%10;
+        sum+=d;
+        n=parseInt(n/10);
+      }
+      document.getElementById("mydiv").innerHTML="The Total sum is= "+sum;
+     }
+      }
+      
+
+
+    </script>
+</head>
+<body>
+  <label for="num">Enter the number:</label>
+  <input type="text" class="num" id="num"/><span id="err"></span><br>
+  <button type="button" class="btn" id="btn" onclick="getsumdigit()">Answer</button>
+  <div id="mydiv"></div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+function validatenumber(num){
+         var n1=parseInt(document.getElementById(num).value)  
+
+         if(!isNaN(n1)){
+           return true;
+         }else{
+          document.getElementById("err").innerHTML="* Invalid Number";
+          return false
+         }
+}
+function getevennumbers(){
+  var flag=validatenumber("num");
+  if(flag)
+  {
+    var n=parseInt(document.getElementById("num").value)
+    for(var i=1;i<=n;i++){
+      if(i%2==0)
+    {
+      alert(i);
+      document.getElementById("mydiv").innerHTML+=i+","
+    }
+    }
+    
+   
+
+  }
+}
+
+  </script>
+</head>
+<body>
+  <h1>Finding Even Numbers</h1>
+  <form>
+  Enter the number: <input type="text" class="num" id="num"/><span id="err"></span><br>
+  <button type="button" class="btn" id="btn" onclick="getevennumbers()">Answer</button>
+  </form>
+  <div id="mydiv"></div>
+</body>
+</html>
