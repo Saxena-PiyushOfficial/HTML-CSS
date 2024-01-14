@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+            var employees = [
+                { empid: 101, ename: "Harshl", salary: 500000 },
+                { empid: 102, ename: "Pranav", salary: 400000 },
+                { empid: 103, ename: "Amey", salary: 200000 },
+                { empid: 104, ename: "Amit", salary: 100000 }
+            ];
+
+            var str = '';
+
+            function displayTable() {
+                str = "<table> <tr><th>Id</th><th>Name</th><th>Salary</th></tr>";
+                for (var i = 0; i < employees.length; i++) {
+                    str += `<tr>
+                                <td>${employees[i].empid}</td>
+                                <td>${employees[i].ename}</td>
+                                <td>${employees[i].salary}</td>
+                            </tr>`;
+                }
+                str += "</table>";
+                document.getElementById("mydiv").innerHTML = str;
+            }
+        </script>
+    </head>
+    <body onload="displayTable()">
+        <div id="mydiv"></div>
+    </body>
+</html>
