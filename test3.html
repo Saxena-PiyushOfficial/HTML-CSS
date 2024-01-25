@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" onchange="handleChange()">
+  <input type="text" onkeydown="handleKeyDown()" onkeyup="handleKeyUp()" onkeypress="handleKeyPress()">
+  
+  
+  <hr>
+  <form onsubmit="handleSubmit()">
+    <input type="text" name="username">
+    <input type="submit" value="Submit">
+</form>
+
+
+
+<script>
+    function handleChange() {
+        console.log("Input value changed");
+    }
+    function handleSubmit() {
+        console.log("Form submitted");
+    }
+
+
+    function handleKeyDown() {
+        console.log("Key down");
+    }
+
+    function handleKeyUp() {
+        console.log("Key up");
+    }
+
+    function handleKeyPress() {
+        console.log("Key pressed");
+    }
+
+
+</script>
+
+</body>
+</html>
